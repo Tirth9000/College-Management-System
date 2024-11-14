@@ -79,6 +79,19 @@ def UpdateStudent(request, id, std_id):
 
 def DeleteStudent(request, id, std_id):
     user = UserModel.objects.get(user_id = std_id)
-    student = StudentDatabase.objects.get(student=user)
+    # student = StudentDatabase.objects.get(student=user)
     user.delete()
     return redirect('all_students', id=id)
+
+    
+def FilterBy(request, id):
+    print('world')
+    students = StudentDatabase.objects.all()  # Start with all students
+    if request.method == 'POST':
+        print('hello')
+        filter_option = request.POST.get('filter_option')  # Get selected filter option
+        if filter_option:
+            students = students.filter(branch=filter_option)  # Filter based on branch
+    return render(request, 'all_student.html', {'students': students})
+    
+    

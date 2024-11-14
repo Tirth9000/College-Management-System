@@ -36,6 +36,7 @@ urlpatterns = [
     path('admin-home/<str:id>/contact/', AdminContact, name='admin_contact_page'),
     
     path('admin-home/<str:id>/all-students/', AllStudents, name='all_students'),
+    path('admin-home/<str:id>/all-students/', FilterBy, name='filter_by'),
     path('admin-home/<str:id>/all-students/update-student/<str:std_id>/', UpdateStudent, name='update_student'),
     path('admin-home/<str:id>/all-students/delete-student/<str:std_id>/', DeleteStudent, name='delete_student'),
 
