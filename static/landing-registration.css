@@ -1,0 +1,199 @@
+body {
+    background-color: rgb(254, 221, 164);
+    font-family: Arial, sans-serif;
+}
+
+.bg-image {
+    background-image: url('/static/IMAGES/LandingPage.JPG');
+    background-size: cover;
+    height: 110vh;
+    background-position: center;
+    position: relative;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.registration-container {
+    background-color: rgba(181, 173, 248, 0.95);
+    max-width: 900px;
+    margin: 60px auto;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+h1 {
+    text-align: center;
+    color: #444;
+    margin-bottom: 25px;
+    font-size: 28px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
+
+.form-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    flex: 0 0 48%;
+    position: relative;
+}
+
+.full-width {
+    flex: 100%;
+}
+
+.form-group label {
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 8px;
+    display: block;
+}
+
+.input-icon {
+    position: relative;
+}
+
+.input-icon input, .input-icon select {
+    width: 100%;
+    padding: 10px 40px 10px 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    transition: 0.3s;
+}
+
+.input-icon i {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #999;
+}
+
+.input-icon input:focus {
+    border-color: #4CAF50;
+}
+
+.gender-options {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 10px;
+}
+
+.radio-inline {
+    position: relative;
+    padding-left: 25px;
+    font-size: 16px;
+    color: #555;
+    cursor: pointer;
+}
+
+.radio-inline input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.radio-inline .checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 20px;
+    width: 20px;
+    background-color: #eee;
+    border-radius: 50%;
+    transition: 0.3s;
+}
+
+.radio-inline input:checked ~ .checkmark {
+    background-color: #365df9;
+}
+
+.radio-inline .checkmark:after {
+    content: "";
+    position: absolute;
+    display: block;
+    top: 6px;
+    left: 6px;
+    width: 8px;
+    height: 8px;
+    background-color: white;
+    border-radius: 50%;
+}
+
+.error-message {
+    color: rgb(167, 27, 27);
+    font-size: 12.8px;
+    text-align: center;
+    font-weight: bold;
+}
+
+input[type="file"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+input[type="file"]:hover {
+    border-color: #4CAF50;
+}
+
+input[type="file"]:focus {
+    border-color: #4CAF50;
+    outline: none;
+}
+
+.register-button {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    background-color: #4CAF50;
+    color: white;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+}
+
+.register-button:hover {
+    background-color: #45a049;
+}
+
+
+@media (max-width: 768px) {
+    .form-row {
+        flex-direction: column;
+    }
+
+    .form-group {
+        flex: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .registration-container {
+        padding: 20px;
+    }
+
+    h2 {
+        font-size: 22px;
+    }
+
+    .register-button {
+        font-size: 16px;
+    }
+}
