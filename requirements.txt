@@ -1,0 +1,9 @@
+django
+python-decouple
+mysqlclient
+cryptography
+django-celery-results
+pymysql
+celery
+redis
+django-celery-results
