@@ -30,7 +30,7 @@ SECRET_KEY = 'django-insecure-noa3x45ik6kbtue!o+ae&3qhiid*!b*=4%9*qp9w-ce-goet&7
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'StudentManagerApp',
+    'django_celery_results',
     'auth_app',
 ]
 
@@ -147,6 +148,11 @@ EMAIL_HOST_USER = config('EMAIL_USER')
 EMAIL_HOST_PASSWORD = config('EMAIL_PASSWORD')
 EMAIL_USE_TLS = config('EMAIL_TLS')
 
+# CELERY_BROKER_URL = 'redis://localhost:6379/0'          # to run celery locally 
+CELERY_BROKER_URL = 'redis://redis:6379/0'
+CELERY_ACCEPT_CONTENT = ['json']
+CELERY_RESULT_BACKEND = 'django-db'
+CELERY_BROKER_CONNECTION_RETRY_ON_STARTUP = True
 
 MESSAGE_TAGS = {
     messages.ERROR : 'danger'    # change message tag error to danger for bootstrap
