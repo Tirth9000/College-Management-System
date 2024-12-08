@@ -17,12 +17,22 @@
                     <i class="fas fa-search"></i>
                 </button>
             </form>
-            <select name="filter_option" class="filter-dropdown">
+            <!--select name="filter_option" class="filter-dropdown">
                 <option value="">All</option>
                 <option value="B.Tech/CSE">CSE</option>
                 <option value="B.Tech/Chemical">Chemical</option>
                 <option value="B.Tech/FEHS">FEHS</option>
-            </select>
+            </select-->
+
+            <form method="GET" action="{% url 'all_students' request.user.user_id %}">
+                <select name="branch" class="filter-dropdown" onchange="this.form.submit()">
+                  <option value="">All Branches</option>
+                  <option value="B.Tech/CSE">CSE</option>
+                  <option value="B.Tech/Chemical">Chem</option>
+                  <option value="B.Tech/FEHS">FEHS</option>
+                </select>
+              </form>
+
         </div>
         <table>
         <thead>

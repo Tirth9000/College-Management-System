@@ -30,6 +30,7 @@ urlpatterns = [
     path('student-home/<str:id>/home/', StudentHome, name='student_home_page'),
     path('student-home/<str:id>/about/', StudentAbout, name='student_about_page'),
     path('student-home/<str:id>/contact/', StudentContact, name='student_contact_page'),
+    
     path('admin-home/<str:id>/', AdminHome, name='admin_home'),
     path('admin-home/<str:id>/home/', AdminHome, name='admin_home_page'),
     path('admin-home/<str:id>/about/', AdminAbout, name='admin_about_page'),

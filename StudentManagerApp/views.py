@@ -43,7 +43,13 @@ def AdminContact(request, id):
 
 
 def AllStudents(request, id):
-    students = StudentDatabase.objects.filter(student__is_staff=False)
+    print('hello')
+    branch = request.GET.get('branch')
+    if branch:
+        print('world')
+        students = StudentDatabase.objects.filter(branch=branch)
+    else:
+        students = StudentDatabase.objects.filter(student__is_staff=False)
     return render(request, 'all_students.html', {'students': students})
 
 def UpdateStudent(request, id, std_id):
@@ -86,12 +92,12 @@ def DeleteStudent(request, id, std_id):
     
 def FilterBy(request, id):
     print('world')
-    students = StudentDatabase.objects.all()  # Start with all students
-    if request.method == 'POST':
-        print('hello')
-        filter_option = request.POST.get('filter_option')  # Get selected filter option
-        if filter_option:
-            students = students.filter(branch=filter_option)  # Filter based on branch
-    return render(request, 'all_student.html', {'students': students})
+    branch = request.GET.get('branch')
+    if branch:
+        students = StudentDatabase.objects.filter(branch=branch)
+    else:
+        students = StudentDatabase.objects.all()
+    return render(request, 'all_students.html', {'students': students})
+
     
     
