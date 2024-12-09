@@ -14,4 +14,4 @@ COPY . .
 
 EXPOSE 8000
 
-CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
+CMD ["sh", "-c", "dockerize -wait tcp://mysql:3306 -timeout 60s && python manage.py runserver 0.0.0.0:8000"]
