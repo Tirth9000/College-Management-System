@@ -13,6 +13,7 @@ services:
       - .env  
     volumes:
       - .:/app
+      - /app/__pycache__/
       - ./static:/app/static
       - ./media:/app/media
       - ./templates:/app/templates
